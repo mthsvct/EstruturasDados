@@ -40,9 +40,9 @@ NO *maiorEsquerda(NO *raiz, NO *pai) {
     NO *resultado = NULL;
     if( raiz != NULL ){
         // Vai procurar o nó que não possui filho a direita.
-        if( raiz->dir == NULL )
-			resultado = pai;
-		else{
+        if( raiz->dir == NULL ){
+            resultado = pai;
+        } else {
             pai = raiz;
             resultado = maiorEsquerda(raiz->dir, pai);
         }

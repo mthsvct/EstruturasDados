@@ -143,3 +143,10 @@ void gestaoBUSCA(NO *raiz){
 
 }
 
+// function count number of nodes in a binary tree
+int countNodes(NO *root) {
+	if (root == NULL)
+		return 0;
+	return (1 + countNodes(root->esq) + countNodes(root->dir));
+}
+

@@ -31,3 +31,5 @@ void gestaoLER(ARVORE **arvore);
 // Funções de buscas
 NO *busca(NO *aux, int num);
 void gestaoBUSCA(NO *raiz);
+
+int countNodes(NO *root);

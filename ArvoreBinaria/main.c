@@ -25,11 +25,12 @@ int menu(){
 	ast();
 	
 	printf("[1] - LER UM NOVO NO\n");
-	printf("[2] - APRESENTAR - MODO PRE-ORDEM   \n");
-	printf("[3] - APRESENTAR - MODO IN-ORDEM    \n");
-	printf("[4] - APRESENTAR - MODO POS-ORDEM   \n");
-	printf("[5] - BUSCAR UM NÚMERO NA ÁRVORE    \n");
-	printf("[6] - REMOVER UM NUMERO DA ÁRVORE   \n");
+	printf("[2] - APRESENTAR - MODO PRE-ORDEM            \n");
+	printf("[3] - APRESENTAR - MODO IN-ORDEM             \n");
+	printf("[4] - APRESENTAR - MODO POS-ORDEM            \n");
+	printf("[5] - BUSCAR UM NÚMERO NA ÁRVORE             \n");
+	printf("[6] - REMOVER UM NUMERO DA ÁRVORE            \n");
+	printf("[7] - CONTAR A QUANTIDADE DE NÓS NA ÁRVORE   \n");
 	printf("[0] - Sair\n");
 
 	ast();
@@ -94,6 +95,11 @@ int main(){
 			case 6:
 				// FUNÇÃO TAL
 				gestaoREMOVE(&arvore->raiz);
+				break;
+
+			case 7:
+				// Contagem de nós.
+				printf("A quantidade de nos na arvore eh: %d \n", countNodes(arvore->raiz));
 				break;
 
 			default:
