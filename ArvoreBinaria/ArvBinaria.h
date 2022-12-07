@@ -33,3 +33,4 @@ NO *busca(NO *aux, int num);
 void gestaoBUSCA(NO *raiz);
 
 int countNodes(NO *root);
+int soma(NO *raiz);

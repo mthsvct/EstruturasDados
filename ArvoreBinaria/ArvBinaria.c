@@ -143,10 +143,21 @@ void gestaoBUSCA(NO *raiz){
 
 }
 
-// function count number of nodes in a binary tree
+
 int countNodes(NO *root) {
+	// Função que conta a quantidade de Nós na arvore
 	if (root == NULL)
 		return 0;
 	return (1 + countNodes(root->esq) + countNodes(root->dir));
 }
 
+
+int soma(NO *raiz) {
+	// functio que soma todos os nodes na arvore
+	int valor = 0;
+	if(raiz != NULL){
+		valor = raiz->dado + soma(raiz->esq); 
+		valor = valor + soma(raiz->dir);
+	}
+	return valor;
+}

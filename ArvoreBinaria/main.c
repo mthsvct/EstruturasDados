@@ -31,6 +31,7 @@ int menu(){
 	printf("[5] - BUSCAR UM NÚMERO NA ÁRVORE             \n");
 	printf("[6] - REMOVER UM NUMERO DA ÁRVORE            \n");
 	printf("[7] - CONTAR A QUANTIDADE DE NÓS NA ÁRVORE   \n");
+	printf("[8] - SOMAR TODOS OS NÓS NA ÁRVORE   \n");
 	printf("[0] - Sair\n");
 
 	ast();
@@ -100,6 +101,11 @@ int main(){
 			case 7:
 				// Contagem de nós.
 				printf("A quantidade de nos na arvore eh: %d \n", countNodes(arvore->raiz));
+				break;
+
+			case 8:
+				// Contagem de nós.
+				printf("A soma dos nos na arvore eh: %d \n", soma(arvore->raiz));
 				break;
 
 			default:
