@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "ArvBinaria.c"
+#include "arvore.c"
 #include "remove.c"
 
 //----------------------------------------------------------//

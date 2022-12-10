@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "ArvBinaria.h"
+#include "arvore.h"
+#include "balanceamento.c"
 
 /* ----------------------------------- ALOCAÇÕES ----------------------------------- */
 
@@ -74,6 +75,7 @@ NO *inserir(ARVORE **arvore, NO *raiz, NO *novo){
         raiz->dir = inserir(arvore, raiz->dir, novo);
     }
 
+	gestaoBALANCEAMENTO(&raiz);
     return raiz;
 }
 
