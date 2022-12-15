@@ -13,6 +13,7 @@ NO *alocaNO(){
     novo = (NO *) malloc(sizeof(NO));
     novo->dir = NULL; // Os ponteiros devem ser iniciados apontando para NULL.
     novo->esq = NULL;
+	novo->profundidade = -1;
     return novo;
 }
 
@@ -22,7 +23,8 @@ ARVORE *alocaArv(){
     nova = (ARVORE *) malloc(sizeof(ARVORE));
     nova->raiz = NULL; // Como a raiz é um ponteiro deve se iniciar apontando para NULL;
     nova->tam = 0;     // O tamanho é uma variável que armazenará a quantidade de Nós que aquela árvore possui, logo deve se iniciar com 0. 
-    return nova;
+    nova->altura = 0; // A altura é uma variável que armazenará a altura da árvore.
+	return nova;
 }
 
 /* ----------------------------------- APRESENTAÇÕES ----------------------------------- */
@@ -160,4 +162,111 @@ int soma(NO *raiz) {
 		valor = valor + soma(raiz->dir);
 	}
 	return valor;
+}
+
+
+// function para calcular a altura de uma árvore binária
+
+// altura é a distância da raiz para o nó mais profundo.
+// profundidade de um nó é a distância da raiz até aquele nó especifico.
+// uma árvore possui uma altura.
+// cada nó possui uma profundidade.
+
+int altura(NO *raiz) {
+	int esq = 0, dir = 0, alt = 0;
+
+	if (raiz != NULL){
+		esq = altura(raiz->esq);
+		dir = altura(raiz->dir);	
+		/* 
+			Verifico qual das sub-árvores é maior, e adiciono 1 para contar a raiz.
+			Se a sub-árvore da esquerda for maior, 
+			então a altura da árvore é a altura da sub-árvore da esquerda + 1.
+		*/
+		if (esq > dir){
+			alt = esq + 1;
+		} else {
+			alt = dir + 1;
+		}
+	}
+
+	return alt;
+}
+
+
+// função que adiciona a profundidade de todos os nós de uma árvore
+void profundidade(NO *raiz, int prof) {
+	/*
+		Nesta função cada nó recebe a profundidade da árvore.
+		Primeiro é atribuido a profundidade do nó e em seguida é chamado a função recursivamente 
+		para os nós da esquerda e da direita. 
+	*/
+	if(raiz != NULL){
+		raiz->profundidade = prof;
+		profundidade(raiz->esq, prof+1);
+		profundidade(raiz->dir, prof+1);
+	}
+}
+
+
+void preordem_infos(NO *raiz) {
+	// Função que imprime os dados de todos os nós da árvore em pré-ordem + informações adicionai.
+	if(raiz != NULL){
+		printf("Dado: %d | Profundidade: %d \n", raiz->dado, raiz->profundidade);
+		preordem_infos(raiz->esq);
+		preordem_infos(raiz->dir);
+	}	
+}
+
+void inordem_infos(NO *raiz) {
+	// Função que imprime os dados de todos os nós da árvore em ordem + informações adicionais.
+	if(raiz != NULL){
+		inordem_infos(raiz->esq);
+		printf("Dado: %d | Profundidade: %d \n", raiz->dado, raiz->profundidade);
+		inordem_infos(raiz->dir);
+	}	
+}
+
+void posordem_infos(NO *raiz) {
+	// Função que imprime os dados de todos os nós da árvore em pós-ordem + informações adicionais.
+	if(raiz != NULL){
+		posordem_infos(raiz->esq);
+		posordem_infos(raiz->dir);
+		printf("Dado: %d | Profundidade: %d \n", raiz->dado, raiz->profundidade);
+	}	
+}
+
+void selOrdem(ARVORE *arvore){
+	int op;
+
+	printf("Escolha a ordem de impressão: \n");
+	printf("1 - Pré-ordem \n");
+	printf("2 - Em ordem \n");
+	printf("3 - Pós-ordem \n");
+
+	printf("Digite: ");
+	scanf("%d", &op);
+
+	printf("\n\n");
+
+	switch(op){
+
+		case 1:
+			preordem_infos(arvore->raiz);
+			break;
+
+		case 2:
+			inordem_infos(arvore->raiz);
+			break;
+
+		case 3:
+			posordem_infos(arvore->raiz);
+			break;
+
+		default:
+			printf("Opção inválida! Digite novamente. \n");
+			selOrdem(arvore);
+			break;
+	}
+
 }
