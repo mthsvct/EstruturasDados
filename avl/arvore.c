@@ -67,9 +67,10 @@ NO *inserir(ARVORE **arvore, NO *raiz, NO *novo){
 
     if( raiz == NULL ){
 		// arvore não possue uma raiz, então o novo é a nova raiz.
-		raiz = novo; (*arvore)->tam = (*arvore)->tam + 1;
+		raiz = novo; 
+		(*arvore)->tam = (*arvore)->tam + 1;
 
-    } else if( novo->dado <= raiz->dado ) {
+    } else if( novo->dado < raiz->dado ) {
 		// Se o dado que está no novo Nó é menor que o comparado, então ele deve ser comparado ou inserido a esquerda.
         raiz->esq = inserir(arvore, raiz->esq, novo);
         
@@ -94,7 +95,8 @@ void insereVetor(int *vetor, int tam, ARVORE **arvore){
 	for(i=0; i<tam; i++){
 		novo = alocaNO();
 		novo->dado = vetor[i];
-		(*arvore)->raiz = inserir(arvore, (*arvore)->raiz, novo); 
+		(*arvore)->raiz = inserir(arvore, (*arvore)->raiz, novo);
+		printf("-----------------------------------\n");
 	}
 }
 

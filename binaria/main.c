@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "arvore.c"
 #include "remove.c"
+#include "geraVetor.c"
 
 //----------------------------------------------------------//
 // Apresentação de texto repetidos:
@@ -34,6 +36,7 @@ int menu(){
 	printf("[8] - SOMAR TODOS OS NÓS NA ÁRVORE                      \n");
 	printf("[9] - APRESENTAR ALTURA DA ÁRVORE                       \n");
 	printf("[10] - CONTABILIZAR PROFUNDIDADE DOS NOS E APRESENTAR   \n");
+	printf("[11] - APRESENTAR UMA QUANTIDADE ESPECIFICA DE NÓS      \n");
 	printf("[0] - Sair\n");
 
 	ast();
@@ -52,10 +55,16 @@ int main(){
 
 	int op;
 	ARVORE *arvore;
-	int vetor[11] = {50, 35, 100, 20, 10, 25, 22, 45, 40, 200, 150};
+	//int vetor[11] = {50, 35, 100, 20, 10, 25, 22, 45, 40, 200, 150};
 
+	srand(time(NULL));
 	arvore = alocaArv();
-	insereVetor(vetor, 11, &arvore);
+	//insereVetor(vetor, 11, &arvore);
+
+	//adicionaAleatorios(&arvore);
+
+	//geraTxt();
+	lerTxt(&arvore);
 
 	do{
 
@@ -120,6 +129,11 @@ int main(){
 				// Contagem da profundidade de todos os nós e apresentação.
 				profundidade(arvore->raiz, 0);
 				selOrdem(arvore);
+				break;
+			
+			case 11:
+				// Apresentação de uma quantidade específica de nós.
+				gestaoHead(arvore->raiz);
 				break;
 
 			default:

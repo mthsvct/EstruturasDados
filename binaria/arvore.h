@@ -45,3 +45,9 @@ void preordem_infos(NO *raiz);
 void inordem_infos(NO *raiz);
 void posordem_infos(NO *raiz);
 void selOrdem(ARVORE *arvore);
+
+void preordem_head(NO *raiz, int n);
+void inordem_head(NO *raiz, int n);
+void posordem_head(NO *raiz, int n);
+void selModoHead(NO *raiz, int n);
+void gestaoHead(NO *raiz);

@@ -2,9 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "arvore.c"
 #include "remove.c"
+#include "geraVetor.c"
+
+/* 
+	Links interessantes:
+		1- https://youtu.be/QC8oiQnlYos
+
+*/
+
 
 //----------------------------------------------------------//
 // Apresentação de texto repetidos:
@@ -54,8 +63,13 @@ int main(){
 	ARVORE *arvore;
 	int vetor[11] = {50, 35, 100, 20, 10, 25, 22, 45, 40, 200, 150};
 
+	srand(time(NULL));
 	arvore = alocaArv();
 	insereVetor(vetor, 11, &arvore);
+
+	//adicionaAleatorios(&arvore);
+	//geraTxt();
+	//lerTxt(&arvore);
 
 	do{
 

@@ -268,5 +268,74 @@ void selOrdem(ARVORE *arvore){
 			selOrdem(arvore);
 			break;
 	}
+}
 
+void preordem_head(NO *raiz, int n) {
+	// Função que apresenta n nós da árvore em pré-ordem.
+	if(raiz != NULL && n > 0){
+		printf("%d \n", raiz->dado);
+		preordem_head(raiz->esq, n-1);
+		preordem_head(raiz->dir, n-1);
+	}
+}
+
+void inordem_head(NO *raiz, int n) {
+	// Função que apresenta n nós da árvore em ordem.
+	if(raiz != NULL && n > 0){
+		inordem_head(raiz->esq, n-1);
+		printf("%d \n", raiz->dado);
+		inordem_head(raiz->dir, n-1);
+	}
+}
+
+void posordem_head(NO *raiz, int n) {
+	// Função que apresenta n nós da árvore em pós-ordem.
+	if(raiz != NULL && n > 0){
+		posordem_head(raiz->esq, n-1);
+		posordem_head(raiz->dir, n-1);
+		printf("%d \n", raiz->dado);
+	}
+}
+
+void selModoHead(NO *raiz, int n){
+	// Função que seleciona o modo de apresentação dos n nós da árvore.
+	int op;
+
+	printf("Selecione o modo de apresentação: ");
+	printf("1 - Pré-ordem \n");
+	printf("2 - Em ordem \n");
+	printf("3 - Pós-ordem \nDigite: ");
+	scanf("%d", &op);
+
+	switch(op){
+
+		case 1:
+			preordem_head(raiz, n);
+			break;
+
+		case 2:
+			inordem_head(raiz, n);
+			break;
+
+		case 3:
+			posordem_head(raiz, n);
+			break;
+
+		default:
+			printf("Opção inválida! Digite novamente. \n");
+			selModoHead(raiz, n);
+			break;
+	}
+}
+
+
+void gestaoHead(NO *raiz){
+	int n, op;
+
+	printf("Digite a quantidade de nós que deseja apresentar: ");
+	scanf("%d", &n);
+
+	printf("\n\n");
+	
+	selModoHead(raiz, n);
 }
