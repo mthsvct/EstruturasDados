@@ -96,7 +96,7 @@ void insereVetor(int *vetor, int tam, ARVORE **arvore){
 		novo = alocaNO();
 		novo->dado = vetor[i];
 		(*arvore)->raiz = inserir(arvore, (*arvore)->raiz, novo);
-		printf("-----------------------------------\n");
+		//printf("-----------------------------------\n");
 	}
 }
 
@@ -110,7 +110,7 @@ void gestaoLER(ARVORE **arvore) {
 
 /* ----------------------------------- BUSCA ----------------------------------- */
 
-NO *busca(NO *aux, int num){
+NO *busca(NO *aux, int num, int *passos){
 	
 	// Função que busca um Nó na árvore a partir de um valor.
 
@@ -121,9 +121,11 @@ NO *busca(NO *aux, int num){
 		if( aux->dado == num ){
 			resultado = aux;
 		} else if( num < aux->dado ){
-			resultado = busca(aux->esq, num);
+			*passos = *passos + 1;
+			resultado = busca(aux->esq, num, passos);
 		} else if( num > aux->dado ) {
-			resultado = busca(aux->dir, num);
+			*passos = *passos + 1;
+			resultado = busca(aux->dir, num, passos);
 		}
 	}
 
@@ -134,20 +136,20 @@ void gestaoBUSCA(NO *raiz){
 
 	// Função que solicita que o usuário digite o valor a ser buscado.
 
-	int num;
+	int num, passos = 0;
 	NO *encontrado;
 
 	printf("Digite o valor que deseja buscar: ");
 	scanf("%d", &num);
 
-	encontrado = busca(raiz, num);
+	encontrado = busca(raiz, num, &passos);
 
-	if(encontrado != NULL){
-		printf("Número encontrado! \n");
-	} else {
+	if(encontrado != NULL)
+		printf("Número encontrado! \n");	
+	else 
 		printf("O número NAO foi encontrado! \n");
-	}
-
+	
+	printf("Passos: %d \n", passos);
 }
 
 

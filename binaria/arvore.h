@@ -31,7 +31,7 @@ void insereVetor(int *vetor, int tam, ARVORE **arvore);
 void gestaoLER(ARVORE **arvore);
 
 // Funções de buscas
-NO *busca(NO *aux, int num);
+NO *busca(NO *aux, int num, int *passos);
 void gestaoBUSCA(NO *raiz);
 
 // Funções de contagem

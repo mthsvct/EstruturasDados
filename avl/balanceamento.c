@@ -91,9 +91,9 @@ void gestaoBALANCEAMENTO(NO **raiz){
         }
     }
 
-    printf("Dado: %d \n", (*raiz)->dado);
+    /* printf("Dado: %d \n", (*raiz)->dado);
     printf("FB: %d\n", fb);
-    printf("Altura: %d\n\n", (*raiz)->altura);
+    printf("Altura: %d\n\n", (*raiz)->altura); */
 
 }
 

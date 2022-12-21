@@ -23,7 +23,7 @@ NO *inserir(ARVORE **arvore, NO *raiz, NO *novo);
 void ler(NO *no);
 void insereVetor(int *vetor, int tam, ARVORE **arvore);
 void gestaoLER(ARVORE **arvore);
-NO *busca(NO *aux, int num);
+NO *busca(NO *aux, int num, int *passos);
 void gestaoBUSCA(NO *raiz);
 int countNodes(NO *root);
 int soma(NO *raiz);
