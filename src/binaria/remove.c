@@ -103,11 +103,13 @@ NO *remover(NO *raiz, int num, NO **removido) {
                 // Eh folha.
                 printf("FOLHA \n");
                 raiz = removerFolha(raiz, removido);
+            
             } else if( qnt == 1 ) {
                 // Eh pai apenas de um Nó.
                 // printf("Entrou aqui! \n");
                 printf("1 FILHO \n");
                 raiz = removerPaiUm(raiz, removido);
+            
             } else {
                 // Eh pai de DOIS nós.
                 printf("2 FILHOS \n");

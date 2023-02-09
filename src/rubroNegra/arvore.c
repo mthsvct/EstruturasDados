@@ -11,7 +11,6 @@
 
 /* ----------------------------------- ALOCAÇÕES ----------------------------------- */
 
-
 NO *alocaNO(){
     // Função que realiza a alocação de um novo Nó da árvore.
     NO *novo;
@@ -154,14 +153,12 @@ void gestaoBUSCA(NO *raiz){
 	printf("Passos: %d \n", passos);
 }
 
-
 int countNodes(NO *root) {
 	// Função que conta a quantidade de Nós na arvore
 	if (root == NULL)
 		return 0;
 	return (1 + countNodes(root->esq) + countNodes(root->dir));
 }
-
 
 int soma(NO *raiz) {
 	// functio que soma todos os nodes na arvore
@@ -172,7 +169,6 @@ int soma(NO *raiz) {
 	}
 	return valor;
 }
-
 
 // function para calcular a altura de uma árvore binária
 
@@ -202,7 +198,6 @@ int altura(NO *raiz) {
 	return alt;
 }
 
-
 // função que adiciona a profundidade de todos os nós de uma árvore
 void profundidade(NO *raiz, int prof) {
 	/*
@@ -216,7 +211,6 @@ void profundidade(NO *raiz, int prof) {
 		profundidade(raiz->dir, prof+1);
 	}
 }
-
 
 void preordem_infos(NO *raiz) {
 	// Função que imprime os dados de todos os nós da árvore em pré-ordem + informações adicionai.
@@ -336,7 +330,6 @@ void selModoHead(NO *raiz, int n){
 			break;
 	}
 }
-
 
 void gestaoHead(NO *raiz){
 	int n, op;
