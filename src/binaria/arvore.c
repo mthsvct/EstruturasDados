@@ -65,7 +65,8 @@ NO *inserir(ARVORE **arvore, NO *raiz, NO *novo){
 
     if( raiz == NULL ){
 		// arvore não possue uma raiz, então o novo é a nova raiz.
-		raiz = novo; (*arvore)->tam = (*arvore)->tam + 1;
+		raiz = novo; 
+		(*arvore)->tam = (*arvore)->tam + 1;
 
     } else if( novo->dado < raiz->dado ) {
 		// Se o dado que está no novo Nó é menor que o comparado, então ele deve ser comparado ou inserido a esquerda.
