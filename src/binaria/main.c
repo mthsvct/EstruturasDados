@@ -20,7 +20,7 @@ int menu(){
 	// FUNÇÃO QUE APRESENTA UM MENU.
 
 	int op;
-	printf("\n\n");
+	printf("\n\n\n");
 	
 	ast();
 	printf("\t\t\tMENU PRINCIPAL:\n");
