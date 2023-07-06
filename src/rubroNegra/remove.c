@@ -5,6 +5,7 @@
 
 #include "remove.h"
 
+
 int qnt_filhos(NO *no){
     // Função que contabiliza a quantidade de filhos que um determinado nó possui.
     int qnt = 0;

@@ -64,7 +64,7 @@ int main(){
 	//adicionaAleatorios(&arvore);
 
 	//geraTxt();
-	lerTxt(&arvore);
+	// lerTxt(&arvore);
 
 	do{
 

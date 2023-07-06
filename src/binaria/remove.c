@@ -88,16 +88,19 @@ NO *removePaiDois(NO *raiz, NO **removido) {
     return raiz; }
 
 // 50, 35, 100, 20, 10, 25, 22, 45, 40, 200, 150
-
 NO *remover(NO *raiz, int num, NO **removido) {
 
     int qnt; // Quantidade de filhos;
+    NO *maior = NULL;
+    int copia;
+    NO *copiaRemovido = NULL;
 
     if( raiz != NULL ) {
 
         if( raiz->dado == num ){
 
             qnt = qnt_filhos(raiz);
+            printf("Quantidade de filhos: %d \n", qnt);
 
             if( qnt == 0 ){
                 // Eh folha.

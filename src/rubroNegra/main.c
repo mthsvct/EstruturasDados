@@ -56,16 +56,16 @@ int main(){
 
 	int op;
 	ARVORE *arvore;
-	//int vetor[11] = {50, 35, 100, 20, 10, 25, 22, 45, 40, 200, 150};
+	int vetor[10] = {50, 25, 86, 10, 42, 70, 100, 30, 63, 94};
 
 	srand(time(NULL));
 	arvore = alocaArv();
-	//insereVetor(vetor, 11, &arvore);
+	insereVetor(vetor, 10, &arvore);
 
 	//adicionaAleatorios(&arvore);
 
 	//geraTxt();
-	lerTxt(&arvore);
+	//lerTxt(&arvore);
 
 	do{
 

@@ -34,11 +34,20 @@ ARVORE *alocaArv(){
 
 /* ----------------------------------- APRESENTAÇÕES ----------------------------------- */
 
+
+char *corTexto(int corN){
+	if(corN == RED)
+		return "VERMELHO";
+	else
+		return "PRETO";
+}
+
+
 void preordem(NO *aux) {
     // Função que apresenta todos os NOs da árvore em Pré-Ordem
 	// Raiz, esquerda, direita;
 	if(aux != NULL){
-		printf("%d ", aux->dado);
+		printf("%d - %s \n", aux->dado, corTexto(aux->cor));
 		preordem(aux->esq);
 		preordem(aux->dir);
 	} 
